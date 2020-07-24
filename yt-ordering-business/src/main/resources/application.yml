@@ -1,0 +1,27 @@
+server:
+    port: 8002
+spring:
+    application:
+        name: business
+    http:
+      encoding:
+        force: true
+        charset: utf-8
+    profiles:
+      active: dev
+
+eureka:
+  instance:
+    #心跳
+    lease-renewal-interval-in-seconds: 5
+    #存活
+    lease-expiration-duration-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+    #拉取信息 单位秒
+    registry-fetch-interval-seconds: 30
+
+
+
+swagger.enabled: false

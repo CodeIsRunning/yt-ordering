@@ -1,0 +1,32 @@
+eureka:
+  instance:
+    #心跳
+    lease-renewal-interval-in-seconds: 5
+    #存活
+    lease-expiration-duration-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+    #拉取信息 单位秒
+    registry-fetch-interval-seconds: 30
+spring:
+  profiles:
+    active: dev
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+  application:
+    name: auth
+server:
+  port: 8001
+
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: "*"

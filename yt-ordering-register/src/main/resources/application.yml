@@ -1,0 +1,21 @@
+
+server:
+    port: 8888
+spring:
+    application:
+        name: register
+    http:
+      encoding:
+        force: true
+        charset: utf-8
+eureka:
+    client:
+        fetch-registry: false
+        register-with-eureka: false
+        service-url:
+            defaultZone: http://localhost:${server.port}/eureka/
+    server:
+        #保护模式 服务挂掉不会立即清理
+        enable-self-preservation: false
+        #清理节点时间毫秒
+        eviction-interval-timer-in-ms: 10000
